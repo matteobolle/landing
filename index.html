@@ -1,93 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matteo Di Marco</title>
     <link rel="icon" href="https://i.ibb.co/sJRNs39/matt-angel.jpg">
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #45a049;
-        /* Darker green background */
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-        text-align: center;
-      }
-
-      .user-profile {
-        text-align: center;
-        margin-top: 30px;
-      }
-
-      .profile-image {
-        border-radius: 50%;
-        max-width: 200px;
-        height: auto;
-        margin: 0 auto;
-        display: block;
-      }
-
-      .username {
-        font-size: 24px;
-        color: #333;
-      }
-
-      .name {
-        font-size: 18px;
-        color: #666;
-      }
-
-      .description {
-        font-size: 18px;
-        color: #333;
-      }
-
-      .button-container {
-        margin-top: 20px;
-      }
-
-      .cta-button {
-        display: block;
-        width: 100%;
-        padding: 10px 0;
-        background-color: #4CAF50;
-        /* Darker green color */
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-        border-radius: 5px;
-        font-size: 20px;
-        margin-bottom: 10px;
-      }
-
-      .cta-button:hover {
-        background-color: #45a049;
-        /* Slightly lighter green color on hover */
-      }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #45a049; /* Darker green background */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .user-profile {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .profile-image {
+            border-radius: 50%;
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+        .username {
+            font-size: 24px;
+            color: #333;
+        }
+        .name {
+            font-size: 18px;
+            color: #666;
+        }
+        .description {
+            font-size: 18px;
+            color: #333;
+        }
+        .quote-container {
+            margin-top: 20px;
+        }
+        .quote {
+            font-size: 18px;
+            color: #fff;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            background-color: #4CAF50; /* Darker green color */
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .cta-button:hover {
+            background-color: #45a049; /* Slightly lighter green color on hover */
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div class="container">
-      <div class="user-profile">
-        <img src="https://i.ibb.co/sJRNs39/matt-angel.jpg" alt="Profile Image" class="profile-image">
-        <div class="username">BubblesXenial</div>
-        <div class="name">Matteo Di Marco</div>
-        <div class="description">N/A TO BE DECIDED</div>
-      </div>
-      <div class="button-container">
-        <a href="https://www.google.it" class="cta-button">Button 1</a>
-        <a href="https://www.google.it" class="cta-button">Button 2</a>
-        <a href="https://www.google.it" class="cta-button">Button 3</a>
-        <a href="https://www.google.it" class="cta-button">Button 4</a>
-        <a href="https://www.google.it" class="cta-button">Button 5</a>
-      </div>
+        <div class="user-profile">
+            <img src="https://i.ibb.co/sJRNs39/matt-angel.jpg" alt="Profile Image" class="profile-image">
+            <div class="username">BubblesXenial</div>
+            <div class="name">Matteo Di Marco</div>
+            <div class="description">14</div>
+            <div class="description">ITIS ZUCCANTE MESTRE</div>
+            <div class="description">Quancuno mi dica cosa scrivere perche boh.</div>
+        </div>
+        <div class="quote-container">
+            <p class="quote" id="quote"></p>
+        </div>
+        <div class="button-container">
+            <a href="https://www.tiktok.com/@not_bubblesxenial?_t=8fh0hnGJWIy&_r=1" class="cta-button">TikTok</a>
+            <a href="https://www.google.it" class="cta-button">GitHub</a>
+            <a href="https://www.google.it" class="cta-button">Discord</a>
+            <a href="https://nohello.net/it/" class="cta-button">NoHello</a>
+            <a href="https://www.google.it" class="cta-button">Google IT</a>
+        </div>
+    </div>
+
+    <script>
+        // Array of quotes
+        const quotes = [
+            "Eh, this website is trash.",
+            "Matt please update this",
+            "Mestre capitale",
+            "Ecco un buono Amazon da 1 cent: AJ1K0-8GD51-K9L36-5T9B",
+            "Ok Google, ricordami di bere il caffe alle 3 di pomeriggio."
+        ];
+
+        // Function to display a random quote every 10 seconds
+        function displayRandomQuote() {
+            const quoteElement = document.getElementById('quote');
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            quoteElement.textContent = quotes[randomIndex];
+        }
+
+        // Display an initial quote
+        displayRandomQuote();
+
+        // Set an interval to change the quote every 10 seconds
+        setInterval(displayRandomQuote, 10000); // 10,000 milliseconds = 10 seconds
+    </script>
+</body>
+</html>
+
     </div>
   </body>
 </html>
