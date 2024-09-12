@@ -1,126 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matteo Di Marco</title>
-    <link rel="icon" href="https://i.ibb.co/sJRNs39/matt-angel.jpg">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Matteo - Profilo Personale</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #45a049; /* Darker green background */
+            background-color: #f4f4f4;
+            overflow-x: hidden;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 2em 0;
+            transition: background-color 0.5s;
+        }
+        header:hover {
+            background-color: #45a049;
+        }
+        section {
             padding: 20px;
-            text-align: center;
-        }
-        .user-profile {
-            text-align: center;
-            margin-top: 30px;
-        }
-        .profile-image {
-            border-radius: 50%;
-            max-width: 200px;
-            height: auto;
             margin: 0 auto;
-            display: block;
+            max-width: 1200px;
         }
-        .username {
-            font-size: 24px;
+        h1, h2 {
             color: #333;
         }
-        .name {
-            font-size: 18px;
-            color: #666;
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
         }
-        .description {
-            font-size: 18px;
-            color: #333;
+        .card {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            flex: 1 1 300px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .quote-container {
-            margin-top: 20px;
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
-        .quote {
-            font-size: 18px;
-            color: #fff;
+        .card h3 {
+            margin-top: 0;
         }
-        .button-container {
-            margin-top: 20px;
-        }
-        .cta-button {
-            display: block;
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: absolute;
+            bottom: 0;
             width: 100%;
-            padding: 10px 0;
-            background-color: #4CAF50; /* Darker green color */
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            font-size: 20px;
-            margin-bottom: 10px;
+            transition: background-color 0.3s ease;
         }
-        .cta-button:hover {
-            background-color: #45a049; /* Slightly lighter green color on hover */
+        footer:hover {
+            background-color: #444;
+        }
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+        }
+        /* Animation for smooth transitions */
+        * {
+            transition: all 0.3s ease-in-out;
         }
     </style>
-
-    <!-- Cookie solution code snippet -->
-    <script type="text/javascript">
-        var _iub = _iub || [];
-        _iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"enableFadp":true,"enableLgpd":true,"enableUspr":true,"fadpApplies":true,"floatingPreferencesButtonDisplay":"bottom-right","perPurposeConsent":true,"siteId":3317510,"usprApplies":true,"whitelabel":false,"cookiePolicyId":41725117,"lang":"it","i18n":{"it":{"banner":{"title":""}}}, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"float-top-center","rejectButtonDisplay":true }};
-    </script>
-    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3317510.js"></script>
-    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 </head>
 <body>
-    <div class="container">
-        <div class="user-profile">
-            <img src="https://i.ibb.co/sJRNs39/matt-angel.jpg" alt="Profile Image" class="profile-image">
-            <div class="username">BubblesXenial</div>
-            <div class="name">Matteo Di Marco</div>
-            <div class="description">14</div>
-            <div class="description">ITIS ZUCCANTE MESTRE</div>
-            <div class="description">Quancuno mi dica cosa scrivere perche boh.</div>
+
+<header>
+    <h1>Benvenuto nel Mondo di Matteo</h1>
+</header>
+
+<section>
+    <h2>Chi Sono</h2>
+    <div class="content">
+        <div class="card">
+            <h3>Profilo Generale</h3>
+            <p>Ciao! Mi chiamo Matteo e ho 15 anni. Sono un grande appassionato di tecnologia e IT infrastructure. Mi piace esplorare il mondo tech, e gestisco anche un server Proxmox VE a casa, dove metto alla prova le mie competenze.</p>
         </div>
-        <div class="quote-container">
-            <p class="quote" id="quote"></p>
+        <div class="card">
+            <h3>Le mie Passioni</h3>
+            <p>Nel tempo libero esploro il mondo digitale, specialmente nell'ambito dell'IT. Mi piace anche mantenere un legame con community online di persone con interessi simili, che mi permette di ampliare le mie conoscenze.</p>
         </div>
-        <div class="button-container">
-            <a href="https://www.tiktok.com/@not_bubblesxenial?_t=8fh0hnGJWIy&_r=1" class="cta-button">TikTok</a>
-            <a href="https://www.google.it" class="cta-button">GitHub</a>
-            <a href="https://www.google.it" class="cta-button">Discord</a>
-            <a href="https://nohello.net/it/" class="cta-button">NoHello</a>
-            <a href="https://www.google.it" class="cta-button">Google IT</a>
+        <div class="card">
+            <h3>Social</h3>
+            <p>Puoi trovarmi su TikTok come <strong>@not_bubblesxenial</strong> e su altre piattaforme tecnologiche dove condivido le mie esperienze e scoperte nel mondo tech.</p>
         </div>
     </div>
+</section>
 
-    <script>
-        // Array of quotes
-        const quotes = [
-            "Eh, this website is trash.",
-            "Matt please update this",
-            "Mestre capitale",
-            "Ecco un buono Amazon da 1 cent: AJ1K0-8GD51-K9L36-5T9B",
-            "Ok Google, ricordami di bere il caffe alle 3 di pomeriggio."
-        ];
+<footer>
+    <p id="hidden-trigger">&copy; 2024 Matteo | Powered by Furries and Cazzate inventate sul momento</p>
+</footer>
 
-        // Function to display a random quote every 10 seconds
-        function displayRandomQuote() {
-            const quoteElement = document.getElementById('quote');
-            const randomIndex = Math.floor(Math.random() * quotes.length);
-            quoteElement.textContent = quotes[randomIndex];
+<script>
+    // Script for counting clicks and redirecting
+    let clickCount = 0;
+    const trigger = document.getElementById('hidden-trigger');
+    trigger.addEventListener('click', () => {
+        clickCount++;
+        if (clickCount >= 10) {
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
         }
+    });
+</script>
 
-        // Display an initial quote
-        displayRandomQuote();
-
-        // Set an interval to change the quote every 10 seconds
-        setInterval(displayRandomQuote, 10000); // 10,000 milliseconds = 10 seconds
-    </script>
 </body>
 </html>
