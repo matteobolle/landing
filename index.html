@@ -151,6 +151,12 @@ Wow you found me.. can I kiss you :3
         "Click on the credits banner 10 times"
     ];
 
+    // Function to change the title every 10 seconds
+    function changeTitle() {
+        const randomIndex = Math.floor(Math.random() * titles.length);
+        document.title = titles[randomIndex];
+    }
+
     // Change the title every 10 seconds
     setInterval(changeTitle, 10000);
 
