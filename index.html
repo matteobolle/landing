@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Matteo - Profilo Personale</title>
+    <title>:3</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://i.ibb.co/wrZqsSD/favicon.png">
     <style>
@@ -139,26 +139,37 @@ Wow you found me.. can I kiss you :3
 
     // Array of possible page titles
     const titles = [
-        "Lorem Ipsum",
-        "Lorem Ipsum",
-        "Lorem Ipsum",
-        "Lorem Ipsum",
-        "Lorem Ipsum",
-        "Lorem Ipsum",
-        "Lorem Ipsum",
-        "Lorem Ipsum",
-        "Lorem Ipsum",
-        "Lorem Ipsum"
+        "Hai seriamente visitato il sito?",
+        "Glutammato Monosodico",
+        "Errore Inventato",
+        "detpecca ton sooζ",
+        "Uh.. Pls fix me Matteo",
+        "Are you there?",
+        "I can see you :3",
+        "Zzzzzzzzzzzzzzzzzzzzz",
+        "Close this page pls :c",
+        "Click on the credits banner 10 times"
     ];
-
-    // Function to change the title every 10 seconds
-    function changeTitle() {
-        const randomIndex = Math.floor(Math.random() * titles.length);
-        document.title = titles[randomIndex];
-    }
 
     // Change the title every 10 seconds
     setInterval(changeTitle, 10000);
+
+    // Fetch user's IP and possibly display it as the title
+    function getUserIP() {
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                // 10% chance to show the IP as the title
+                const chance = Math.random();
+                if (chance <= 0.1) {
+                    document.title = `Il tuo IP: ${data.ip}`;
+                }
+            })
+            .catch(error => console.error('Errore :c | ', error));
+    }
+
+    // Call the function to fetch IP
+    getUserIP();
 </script>
 
 </body>
