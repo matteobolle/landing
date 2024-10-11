@@ -5,74 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>:3</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://i.ibb.co/wrZqsSD/favicon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+                :root {
+            --primary-color: #ff7e5f;
+            --primary-color-dark: #feb47b;
+            --info-color: #4facfe;
+            --danger-color: #ff5e62;
+            --success-color: #43e97b;
+            --gray-color: #f0f0f0;
+            --background-color-1: #141e30;
+            --background-color-2: #243b55;
+            --background-color-3: #4a0e4e;
+            --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            --border-radius: 1.25rem;
+            --navbar-background: rgba(20, 30, 48, 0.95);
+            --button-shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.3);
+            --container-background: rgba(255, 255, 255, 0.05);
+            --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes gradientBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            background: linear-gradient(
+                -45deg,
+                var(--background-color-1),
+                var(--background-color-2),
+                var(--background-color-3),
+                var(--background-color-2)
+            );
+            background-size: 400% 400%;
+            animation: gradientBackground 30s ease infinite;
+            color: #f0f0f0;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.9;
+            overflow-x: hidden;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            overflow-x: hidden;
         }
-        header {
-            background-color: #4CAF50;
+
+        header { background-color: rgba(20, 30, 48, 0.5);
             color: white;
             text-align: center;
-            padding: 2em 0;
-            transition: background-color 0.5s;
+            padding: 4em 0;
+            box-shadow: var(--card-shadow);
+            border-radius: var(--border-radius);
+            margin: 20px;
         }
-        header:hover {
-            background-color: #45a049;
-        }
+
         section {
-            padding: 20px;
-            margin: 0 auto;
+            padding: 40px;
+            margin: 20px auto;
             max-width: 1200px;
+            background: var(--container-background);
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
         }
+
         h1, h2 {
-            color: #333;
+            color: #f0f0f0;
+            text-shadow: var(--text-shadow);
         }
+
         .content {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
         }
+
         .card {
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: var(--card-shadow);
             padding: 20px;
             flex: 1 1 300px;
-            border-radius: 8px;
+            border-radius: var(--border-radius);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .card:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            box-shadow: var(--button-shadow-hover);
         }
+
         .card h3 {
             margin-top: 0;
+            color: var(--primary-color);
         }
-        footer {
-            background-color: #333;
+
+        footer { background-color: rgba(20, 30, 48, 0.5);
             color: white;
             text-align: center;
-            padding: 1em 0;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            transition: background-color 0.3s ease;
+            padding: 1.5em 0;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            margin: 20px;
+            border-radius: var(--border-radius);
         }
-        footer:hover {
-            background-color: #444;
-        }
+
         @media (max-width: 768px) {
             .content {
                 flex-direction: column;
             }
         }
-        /* Animation for smooth transitions */
-        * {
+
+                * {
             transition: all 0.3s ease-in-out;
         }
     </style>
@@ -81,55 +128,108 @@
 
 <header>
     <h1>Benvenuto nel Mondo di Matteo</h1>
+
 </header>
 
 <section>
-    <h2>Chi Sono</h2>
+    <h2 class="italian-content">Chi Sono</h2>
+    <h2 class="english-content" style="display: none;">About Me</h2>
     <div class="content">
         <div class="card">
-            <h3>Profilo Generale</h3>
-            <p>Ciao! Mi chiamo Matteo e ho 15 anni. Sono un grande appassionato di tecnologia e IT infrastructure. Mi piace esplorare il mondo tech, e gestisco anche un server Proxmox VE a casa, dove metto alla prova le mie competenze.</p>
+            <h3 class="italian-content">Profilo Generale</h3>
+            <h3 class="english-content" style="display: none;">General Profile</h3>
+            <p class="italian-content">Ciao! Mi chiamo Matteo e ho 15 anni. Sono un grande appassionato di tecnologia e IT infrastructure. Mi piace esplorare il mondo tech, e gestisco anche un server Proxmox VE a casa, dove metto alla prova le mie competenze.</p>
+            <p class="english-content" style="display: none;">Hi! My name is Matthew and I am 15 years old. I am very passionate about technology and IT infrastructure. I love exploring the tech world, and I also manage a Proxmox VE server at home to test my skills.</p>
         </div>
         <div class="card">
-            <h3>Le mie Passioni</h3>
-            <p>Nel tempo libero esploro il mondo digitale, specialmente nell'ambito dell'IT. Mi piace anche mantenere un legame con community online di persone con interessi simili, che mi permette di ampliare le mie conoscenze.</p>
+            <h3 class="italian-content">Le mie Passioni</h3>
+            <h3 class="english-content" style="display: none;">My Passions</h3>
+            <p class="italian-content">Nel tempo libero esploro il mondo digitale, specialmente nell'ambito dell'IT. Mi piace anche mantenere un legame con community online di persone con interessi simili, che mi permette di ampliare le mie conoscenze.</p>
+            <p class="english-content" style="display: none;">In my free time, I explore the digital world, especially in the field of IT. I also enjoy staying connected with online communities of like-minded people, which helps me expand my knowledge.</p>
         </div>
         <div class="card">
-            <h3>Social</h3>
-            <p>Puoi trovarmi su TikTok come <strong>@not_bubblesxenial</strong> e su altre piattaforme tecnologiche dove condivido le mie esperienze e scoperte nel mondo tech.</p>
+            <h3 class="italian-content">Social</h3>
+            <h3 class="english-content" style="display: none;">Social</h3>
+            <p class="italian-content">Puoi trovarmi su TikTok come <strong>@not_bubblesxenial</strong> e su altre piattaforme tecnologiche dove condivido le mie esperienze e scoperte nel mondo tech.</p>
+            <p class="english-content" style="display: none;">You can find me on TikTok as <strong>@not_bubblesxenial</strong> and on other tech platforms where I share my experiences and discoveries in the tech world.</p>
         </div>
     </div>
 </section>
 
 <footer>
-    <p id="hidden-trigger">&copy; 2024 Matteo | Powered by Glutammato Monosodico and Cazzate inventate sul momento</p>
+    <p id="hidden-trigger" class="italian-footer">&copy; 2024 Matteo | Powered by Glutammato Monosodico and Cazzate inventate sul momento</p>
+    <p id="hidden-trigger-en" class="english-footer" style="display: none;">&copy; 2024 Xenial | Powered by MSG and Totally Made-up Bullshit on the Spot</p>
 </footer>
 
-<!-- 
-⠀⢸⠂⠀⠀⠀⠘⣧⠀⠀⣟⠛⠲⢤⡀⠀⠀⣰⠏⠀⠀⠀⠀⠀⢹⡀
-⠀⡿⠀⠀⠀⠀⠀⠈⢷⡀⢻⡀⠀⠀⠙⢦⣰⠏⠀⠀⠀⠀⠀⠀⢸⠀
-⠀⡇⠀⠀⠀⠀⠀⠀⢀⣻⠞⠛⠀⠀⠀⠀⠻⠀⠀⠀⠀⠀⠀⠀⢸⠀
-⠀⡇⠀⠀⠀⠀⠀⠀⠛⠓⠒⠓⠓⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀
-⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠀
-⠀⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⠀⠀⢀⡟⠀
-⠀⠘⣇⠀⠘⣿⠋⢹⠛⣿⡇⠀⠀⠀⠀⣿⣿⡇⠀⢳⠉⠀⣠⡾⠁⠀
-⣦⣤⣽⣆⢀⡇⠀⢸⡇⣾⡇⠀⠀⠀⠀⣿⣿⡷⠀⢸⡇⠐⠛⠛⣿⠀
-⠹⣦⠀⠀⠸⡇⠀⠸⣿⡿⠁⢀⡀⠀⠀⠿⠿⠃⠀⢸⠇⠀⢀⡾⠁⠀
-⠀⠈⡿⢠⢶⣡⡄⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀⣴⣧⠆⠀⢻⡄⠀⠀
-⠀⢸⠃⠀⠘⠉⠀⠀⠀⠠⣄⡴⠲⠶⠴⠃⠀⠀⠀⠉⡀⠀⠀⢻⡄⠀
-⠀⠘⠒⠒⠻⢦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⠞⠛⠒⠛⠋⠁⠀
-⠀⠀⠀⠀⠀⠀⠸⣟⠓⠒⠂⠀⠀⠀⠀⠀⠈⢷⡀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠙⣦⠀⠀⠀⠀⠀⠀⠀⠀⠈⢷⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⣼⣃⡀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣆⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠉⣹⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡆⠀⠀⠀⠀⠀
-Wow you found me.. can I kiss you :3
--->
 
 <script>
-    // Script for counting clicks and redirecting
-    let clickCount = 0;
-    const trigger = document.getElementById('hidden-trigger');
+    // Too lazy to comment this part
+
+        // More lazy comments incoming...
+document.addEventListener('DOMContentLoaded', () => {
+        const languageToggle = document.getElementById('language-toggle');
+        const italianContent = {
+            header: 'Benvenuto nel Mondo di Matteo',
+            profile: 'Profilo Generale',
+            profileText: 'Ciao! Mi chiamo Matteo e ho 15 anni. Sono un grande appassionato di tecnologia e IT infrastructure. Mi piace esplorare il mondo tech, e gestisco anche un server Proxmox VE a casa, dove metto alla prova le mie competenze.',
+            passions: 'Le mie Passioni',
+            passionsText: 'Nel tempo libero esploro il mondo digitale, specialmente nell\'ambito dell\'IT. Mi piace anche mantenere un legame con community online di persone con interessi simili, che mi permette di ampliare le mie conoscenze.',
+            social: 'Social',
+            socialText: 'Puoi trovarmi su TikTok come @not_bubblesxenial e su altre piattaforme tecnologiche dove condivido le mie esperienze e scoperte nel mondo tech.'
+        };
+        const englishContent = {
+            header: 'Welcome to Matthew\'s World',
+            profile: 'General Profile',
+            profileText: 'Hi! My name is Matthew and I am 15 years old. I am very passionate about technology and IT infrastructure. I love exploring the tech world, and I also manage a Proxmox VE server at home to test my skills.',
+            passions: 'My Passions',
+            passionsText: 'In my free time, I explore the digital world, especially in the field of IT. I also enjoy staying connected with online communities of like-minded people, which helps me expand my knowledge.',
+            social: 'Social',
+            socialText: 'You can find me on TikTok as @not_bubblesxenial and on other tech platforms where I share my experiences and discoveries in the tech world.'
+        };
+        
+        // Not even trying to comment this
+function setLanguage(content) {
+            document.querySelectorAll('.italian-content').forEach(el => el.style.display = content === italianContent ? 'block' : 'none');
+            document.querySelectorAll('.english-content').forEach(el => el.style.display = content === englishContent ? 'block' : 'none');
+                        if (content === italianContent) {
+                document.querySelector('.italian-footer').style.display = 'block';
+                document.querySelector('.english-footer').style.display = 'none';
+            } else {
+                document.querySelector('.italian-footer').style.display = 'none';
+                document.querySelector('.english-footer').style.display = 'block';
+            }
+            document.querySelector('header h1').textContent = content.header;
+            document.querySelector('.card:nth-child(1) h3').textContent = content.profile;
+            document.querySelector('.card:nth-child(1) p').textContent = content.profileText;
+            document.querySelector('.card:nth-child(2) h3').textContent = content.passions;
+            document.querySelector('.card:nth-child(2) p').textContent = content.passionsText;
+            document.querySelector('.card:nth-child(3) h3').textContent = content.social;
+            document.querySelector('.card:nth-child(3) p').textContent = content.socialText;
+        }
+
+        if (navigator.language && navigator.language.startsWith('it')) {
+            setLanguage(italianContent);
+            languageToggle.textContent = '🇮🇹';
+        } else {
+            setLanguage(englishContent);
+            languageToggle.textContent = '🇺🇸';
+        }
+
+        // Clicking magic happens here
+languageToggle.addEventListener('click', () => {
+            if (languageToggle.textContent === '🇮🇹') {
+                setLanguage(englishContent);
+                languageToggle.textContent = '🇺🇸';
+            } else {
+                setLanguage(italianContent);
+                languageToggle.textContent = '🇮🇹';
+            }
+        });
+        
+    });
+        let clickCount = 0;
+    // Too lazy to explain this click count logic
+const trigger = document.getElementById('hidden-trigger');
     trigger.addEventListener('click', () => {
         clickCount++;
         if (clickCount >= 10) {
@@ -137,12 +237,11 @@ Wow you found me.. can I kiss you :3
         }
     });
 
-    // Array of possible page titles
-    const titles = [
+        const titles = [
         "Hai seriamente visitato il sito?",
         "Glutammato Monosodico",
         "Errore Inventato",
-        "detpecca ton sooζ",
+        "slp yawa og ,detpecca ton sooζ",
         "Uh.. Pls fix me Matteo",
         "Are you there?",
         "I can see you :3",
@@ -151,21 +250,20 @@ Wow you found me.. can I kiss you :3
         "Click on the credits banner 10 times"
     ];
 
-    // Function to change the title every 10 seconds
-    function changeTitle() {
+        // Changing titles because why not?
+function changeTitle() {
         const randomIndex = Math.floor(Math.random() * titles.length);
         document.title = titles[randomIndex];
     }
 
-    // Change the title every 10 seconds
-    setInterval(changeTitle, 10000);
+        setInterval(changeTitle, 10000);
 
-    // Fetch user's IP and possibly display it as the title
-    function getUserIP() {
+        // Fetching IPs, because it's funny
+function getUserIP() {
         fetch('https://api.ipify.org?format=json')
             .then(response => response.json())
             .then(data => {
-                // 10% chance to show the IP as the title
+                // 10% chance to show the IP as the title because we wanna scare you... or maybe just to mess with you a little ;)
                 const chance = Math.random();
                 if (chance <= 0.1) {
                     document.title = `Il tuo IP: ${data.ip}`;
@@ -174,9 +272,9 @@ Wow you found me.. can I kiss you :3
             .catch(error => console.error('Errore :c | ', error));
     }
 
-    // Call the function to fetch IP
-    getUserIP();
+        getUserIP();
 </script>
 
+<button id="language-toggle" style="position: fixed; bottom: 20px; right: 20px; background: rgba(20, 30, 48, 0.5); color: white; border: none; border-radius: 50%; padding: 10px; font-size: 1.2em; cursor: pointer; box-shadow: var(--card-shadow);">🇮🇹</button>
 </body>
 </html>
