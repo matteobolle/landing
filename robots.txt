@@ -52,6 +52,11 @@ Disallow: /
 User-agent: MJ12bot
 Disallow: /
 
+User-agent: *
+Disallow: /privacy
+
+Sitemap: https://bubblesxenial.it/sitemap.xml
+
 # Internet Archive (sorry)
 User-agent: ia_archiver
 Disallow: /
