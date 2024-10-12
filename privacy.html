@@ -43,7 +43,7 @@
             padding: 0;
         }
 
-        header {
+        header, footer {
             background-color: var(--navbar-background);
             color: white;
             text-align: center;
@@ -67,17 +67,6 @@
             text-shadow: var(--text-shadow);
         }
 
-        footer {
-            background-color: rgba(20, 30, 48, 0.5);
-            color: white;
-            text-align: center;
-            padding: 1.5em 0;
-            box-shadow: var(--card-shadow);
-            position: relative;
-            margin: 20px;
-            border-radius: var(--border-radius);
-        }
-
         @media (max-width: 768px) {
             section {
                 padding: 20px;
@@ -92,13 +81,11 @@
 <body>
 
 <header>
-    <h1>Privacy Policy</h1>
+    <h1 class="italian-content">Privacy Policy di bubblesxenial.it / xenial.lol</h1>
+    <h1 class="english-content" style="display: none;">Privacy Policy for bubblesxenial.it / xenial.lol</h1>
 </header>
 
 <section>
-    <h2 class="italian-content">Privacy Policy di bubblesxenial.it / xenial.lol</h2>
-    <h2 class="english-content" style="display: none;">Privacy Policy for bubblesxenial.it / xenial.lol</h2>
-    
     <div class="content">
         <div class="italian-content">
             <p>La presente Privacy Policy descrive come il sito gestisce i dati tecnici dei visitatori tramite l’utilizzo di servizi di terze parti per garantire il corretto funzionamento.</p>
@@ -134,32 +121,38 @@
 </section>
 
 <footer>
-    <p>&copy; 2024 Xenial | Powered by MSG and Totally Made-up Bullshit on the Spot</p>
-
-
-<p><a href="https://bubblesxenial.it" style="color: #f0f0f0; text-decoration: none;">Home</a></p>
-<div class="social-links">
-    <a href="https://www.tiktok.com/@not_bubblesxenial" title="TikTok" style="margin: 0 10px;"><img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="TikTok" width="24" height="24"></a>
-    <a href="https://discord.com/users/1185871608078946354" title="Discord" style="margin: 0 10px;"><img src="https://img.icons8.com/ios-filled/50/ffffff/discord-logo.png" alt="Discord" width="24" height="24"></a>
-    <a href="https://www.youtube.com/@MatthewXenial" title="YouTube" style="margin: 0 10px;"><img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="YouTube" width="24" height="24"></a>
-    <a href="https://github.com/matteobolle" title="GitHub" style="margin: 0 10px;"><img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub" width="24" height="24"></a>
-</div>
+    <p class="italian-footer">&copy; 2024 Xenial | Powered by Glutammato Monosodico and Cazzate inventate sul momento</p>
+    <p class="english-footer" style="display: none;">&copy; 2024 Xenial | Powered by MSG and Totally Made-up Bullshit on the Spot</p>
+    <div class="social-links">
+        <a href="https://www.tiktok.com/@not_bubblesxenial" title="TikTok"><img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png" alt="TikTok" width="24" height="24"></a>
+        <a href="https://discord.com/users/1185871608078946354" title="Discord"><img src="https://img.icons8.com/ios-filled/50/ffffff/discord-logo.png" alt="Discord" width="24" height="24"></a>
+        <a href="https://www.youtube.com/@MatthewXenial" title="YouTube"><img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="YouTube" width="24" height="24"></a>
+        <a href="https://github.com/matteobolle" title="GitHub"><img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub" width="24" height="24"></a>
+    </div>
 </footer>
+
+<button id="language-toggle" style="position: fixed; bottom: 20px; right: 20px; background: var(--navbar-background); color: white; border: none; border-radius: 50%; padding: 10px; font-size: 1.2em; cursor: pointer; box-shadow: var(--card-shadow);">🇮🇹</button>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const languageToggle = document.getElementById('language-toggle');
         const italianContent = document.querySelectorAll('.italian-content');
         const englishContent = document.querySelectorAll('.english-content');
+        const italianFooter = document.querySelector('.italian-footer');
+        const englishFooter = document.querySelector('.english-footer');
 
         function setLanguage(language) {
             if (language === 'it') {
                 italianContent.forEach(el => el.style.display = 'block');
                 englishContent.forEach(el => el.style.display = 'none');
+                italianFooter.style.display = 'block';
+                englishFooter.style.display = 'none';
                 languageToggle.textContent = '🇮🇹';
             } else {
                 italianContent.forEach(el => el.style.display = 'none');
                 englishContent.forEach(el => el.style.display = 'block');
+                italianFooter.style.display = 'none';
+                englishFooter.style.display = 'block';
                 languageToggle.textContent = '🇺🇸';
             }
         }
@@ -179,8 +172,6 @@
         });
     });
 </script>
-
-<button id="language-toggle" style="position: fixed; bottom: 20px; right: 20px; background: rgba(20, 30, 48, 0.5); color: white; border: none; border-radius: 50%; padding: 10px; font-size: 1.2em; cursor: pointer; box-shadow: var(--card-shadow);">🇮🇹</button>
 
 </body>
 </html>
